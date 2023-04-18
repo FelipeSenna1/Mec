@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-icon">
+    <title>Code Mec</title>
+</head>
+<body>
+
+    <div class="sidebar">
+
+        <div class="logo-details">
+            <i class='bx bx-code icon'></i>
+            <div class="logo_name">CodeMec</div>
+            <i class='bx bx-menu' id="btn" ></i>
+        </div>
+
+        <ul class="nav-list">
+
+            <li>
+                <a href="#home" class="active">
+                    <i class='bx bx-home'></i>
+                    <span class="links_name">Home</span>
+                </a>
+                <span class="tooltip">Home</span>
+            </li>
+
+            <li>
+                <a href="#dentes">
+                    <i class='bx bx-cog' ></i>
+                    <span class="links_name">Dentes Retos</span>
+                </a>
+                <span class="tooltip">Dentes Retos</span>
+            </li>
+
+            
+            <li>
+                <a href="#conica">
+                    <i class='bx bx-pyramid'></i>
+                    <span class="links_name">Conica</span>
+                </a>
+                <span class="tooltip">Conica</span>
+            </li>
+
+            <li>
+                <a href="#semfim">
+                    <i class='bx bx-infinite'></i>
+                    <span class="links_name">Sem Fim</span>
+                </a>
+                <span class="tooltip">Sem Fim</span>
+            </li>
+
+            <li>
+                <a href="#historico">
+                    <i class='bx bx-history'></i>
+                    <span class="links_name">Historico</span>
+                </a>
+                <span class="tooltip">Historico</span>
+            </li>
+
+            <li>
+                <a href="#about">
+                    <i class='bx bx-user' ></i>
+                    <span class="links_name">Sobre</span>
+                </a>
+                <span class="tooltip">Sobre</span>
+            </li>
+
+            <!-- <li class="profile">
+                <div class="profile-details">
+                    <div class="name_job">
+                        <div class="name"></div>
+                        <div class="job"></div>
+                    </div>
+                </div>
+                <i class='bx bx-log-out' id="log_out" ></i>
+            </li> -->
+        </ul>
+    </div>
+
+    <section class="home-section active" id="home">
+        <div class="text">
+            <header class="headerHome">
+                <h1> <span>Code</span>Mec</h1>
+                <p>calculadora de mecânica</p>
+            </header>
+
+            <div class="card">
+                <i class='bx bx-cog' ></i>
+                <h2>Dentes Restos</h2>
+                <p>Dentes retos tambem pode ser utilizada em helicoidais</p>
+
+                <div class="containerSubcard">
+                    <div class="subCard">
+                        <p>N: N. de Dentes</p>
+                    </div>
+                    <div class="subCard">
+                        <p>D: Diametro do Furo</p>
+                    </div>
+                    <div class="subCard">
+                        <p>M: Modulo</p>
+                    </div>
+                    <div class="subCard">
+                        <p>a: Angulo de Pressão</p>
+                    </div>
+                </div>
+
+                <div class="containerSubcard">
+                    <div class="subCard">
+                        <h4>Diametro externo</h4>
+                        <p>De = M x (n+2)</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Diametro Primitivo</h4>
+                        <p>Dp = M x N</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Diametro Interno</h4>
+                        <p>Di = De - 2H</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Diametro de Base</h4>
+                        <p>Db = Dp x Cosa</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Dist. entre centros</h4>
+                        <p>Dc = M x (N<sub>1</sub> + N<sub>2</sub>)/2</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Folga do Dente</h4>
+                        <p>F = 0,16 x M</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Altura do Dente</h4>
+                        <p>H = 2,16 x M</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Passo</h4>
+                        <p>P = M x 3,1416</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Cubo</h4>
+                        <p>C = 2 x D</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Comp. do Cubo</h4>
+                        <p>Cc = 2 x D</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Reforço</h4>
+                        <p>G = P / 2</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Comp. do Dente</h4>
+                        <p>L = 8 x M</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Corpo. roda chaveta </h4>
+                        <p>l = 60% L</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Espessura</h4>
+                        <p>E = P / 2</p>
+                    </div>
+                </div>
+
+                <h3>Calculadora Offiline</h3>
+
+                <a href="./offiline/dentesRetos.html">
+                    <button class="noselect">
+                        <span class="down">download</span>
+                        <span class="iconDown">
+                            <img src="./assets/download.svg" alt="">
+                        </span>
+                    </button>
+                </a>
+            </div>
+            
+            <div class="card">
+                <i class='bx bx-pyramid'></i>
+                <h2>Conica</h2>
+                <p></p>
+
+                <div class="containerSubcard">
+                    <div class="subCard">
+                        <p>N: N. de Dentes</p>
+                    </div>
+                    <div class="subCard">
+                        <p>D: Diametro do Furo</p>
+                    </div>
+                    <div class="subCard">
+                        <p>M: Modulo</p>
+                    </div>
+                    <div class="subCard">
+                        <p>a: Angulo de Pressão</p>
+                    </div>
+                </div>
+
+                <div class="containerSubcard">
+                    <div class="subCard">
+                        <h4>Diametro Externo</h4>
+                        <p>De = Dp + 2M <sub>x</sub> cos(B)</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Diametro Primitivo</h4>
+                        <p>Dp = M <sub>x</sub> N</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Tg B</h4>
+                        <p>B = N1 / N2</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Geratriz</h4>
+                        <p>G = (Dp / 2) <sub>x</sub> sin(B)</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Comp. Dente</h4>
+                        <p>L = G / 3</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Altura total do Dente</h4>
+                        <p>H = 2.166 <sub>x</sub> M</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Espessura do dente </h4>
+                        <p>E = 1.57 <sub>x</sub> M</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Ang. pè do Dente</h4>
+                        <p>Tg Z = 7 <sub>x</sub> M / 6 <sub>x</sub> G</p>
+                    </div>
+                    <div class="subCard" title="Angulo da cabeça do dente">
+                        <h4>Ang da Cab. Dente</h4>
+                        <p>Tg Y = M / 6</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Ang. Cone Externo</h4>
+                        <p>A = B + Y</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Ang. Cone Interno</h4>
+                        <p>C = B - Z</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Folga do Dente</h4>
+                        <p>F = 0,167 <sub>x</sub> M</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Prof. do Rasgo</h4>
+                        <p>W = 1,25 <sub>x</sub> H</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Diametro do cubo</h4>
+                        <p>Dc = 1,5 <sub>x</sub> d</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Comp. do Cubo</h4>
+                        <p>Cc = 1,5 <sub>x</sub> d</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Chaveta a</h4>
+                        <p>a = 0,5 <sub>x</sub> b</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Chaveta b</h4>
+                        <p>b = 1/4 <sub>x</sub> D</p>
+                    </div>
+                </div>
+
+                <h3>Calculadora Offiline</h3>
+
+                <a href="./offiline/conica.html">
+                    <button class="noselect">
+                        <span class="down">download</span>
+                        <span class="iconDown">
+                            <img src="./assets/download.svg" alt="">
+                        </span>
+                    </button>
+                </a>
+            </div>
+
+            <div class="card">
+                <i class='bx bx-infinite'></i>
+                <h2>Sem Fim</h2>
+                <p>Formulario Parafuso de Rosca Sem Fim</p>
+
+               <div class="containerSubcard">
+                    <div class="subCard">
+                        <h4>Modulo Axial</h4>
+                        <p>Ma = M / cos(B)</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Modulo circunferencial</h4>
+                        <p>Mc = M / cos(B)</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Passo Normal</h4>
+                        <p>Pn = M <sub>x</sub> PI</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Passo Axial</h4>
+                        <p>Pa = Ma <sub>x</sub> PI</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Passo Circunferencial<h4>
+                        <p>Mc <sub>x</sub> PI</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Passo Helice</h4>
+                        <p>Ph = Pa <sub>x</sub> N</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Diametro primitivo</h4>
+                        <p>Dp = Mc <sub>x</sub>N</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Diametro Externo</h4>
+                        <p>De = Dp + 2M</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Diametro Interno</h4>
+                        <p>Di = Dp - 2,334 <sub>x</sub>M</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Altura Cab. Dente</h4>
+                        <p>a = M</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Altura Pé</h4>
+                        <p>b = 1,167 <sub>x</sub> M</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Altura total</h4>
+                        <p>h = a + b</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Folga do pé</h4>
+                        <p>e = 0,167 <sub>x</sub> M</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Espessura do Filete</h4>
+                        <p>E = Pn / 2</p>
+                    </div>
+                    <div class="subCard">
+                        <h4>Comp. do Parafuso</h4>
+                        <p>L = 2 <sub>x</sub> Ma (1+/-N2)</p>
+                    </div>
+                    <!-- <div class="subCard">
+                        <h4></h4>
+                        <p></p>
+                    </div> -->
+                </div>
+
+                <h3>Calculadora Offiline</h3>
+
+                <a href="./offiline/semFim.html">
+                    <button class="noselect">
+                        <span class="down">download</span>
+                        <span class="iconDown">
+                            <img src="./assets/download.svg" alt="">
+                        </span>
+                    </button>
+                </a>
+            </div>        
+        </div>
+        <footer>
+            @copyHigt
+        </footer>
+    </section>
+    
+    <section class="home-section" id="dentes">
+        <div class="text">
+
+            <div class="container_dados"> 
+                <h1>ENGRENAGEM DE DENTES RETOS</h1>
+                
+                <fieldset>
+                    <legend><h2>DADOS</h2></legend>
+                    
+                    <div class="containerInput">
+                        <div class="inputGroup">
+                            <input type="number" required="off" id="n1_dentes" title="">
+                            <label for="n1_dentes">N1</label>
+                        </div>
+                        
+                        <div class="inputGroup">
+                            <input type="number" required="off" id="n2_dentes" title="">
+                            <label for="n2_dentes">N2</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="containerInput">
+                        <div class="inputGroup">
+                            <input type="number" required="off" id="d1_dentes" title="">
+                            <label for="d1_dentes">D1</label>
+                        </div>
+                        
+                        <div class="inputGroup">
+                            <input type="number" required="off" id="d2_dentes" title="">
+                            <label for="d2_dentes">D2</label>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="containerInput">
+                        <div class="inputGroup">
+                            <input type="number" required="off" id="modulo_dentes"  title="">
+                            <label for="modulo_dentes">Modulo</label>
+                        </div>
+                        
+                        <div class="inputGroup">
+                            <input type="number" required="off" id="angulo_dentes" title="">
+                            <label for="angulo_dentes"> angulo &#945</label>
+                        </div>
+                    </div>
+                </fieldset>
+                    
+                    <button onclick="calculoDentes()" class="btnCalcular" type="submit">
+                        <span>calcular</span>
+                    </button>
+                    
+            </div> 
+                 
+                <section id="statusDentes">
+                    <button onclick="fechar()" class="fechar"> 
+                        <i class='bx bx-x'></i>
+                    </button>
+                    
+                    <h2>RESULTADO</h2>
+                    
+                    <div id="resultadoDentes"></div>
+                </section>
+        </div>
+    </section>
+
+    <section class="home-section" id="conica">
+        <div class="text">
+            
+            <div class="container_dados">        
+                <h1>ENGRENAGEM CONICA</h1>
+                    
+                <fieldset>
+                    <legend><h2>DADOS</h2></legend>
+                    
+                    <div class="containerInput">
+                        <div class="inputGroup">
+                            <input type="number" required="off" id="n1_conica" title="">
+                            <label for="n1_conica">N1</label>
+                        </div>
+                        
+                        <div class="inputGroup">
+                            <input type="number" required="off" id="n2_conica" title="">
+                            <label for="n2_conica">N2</label>
+                        </div>
+                    </div>
+                    
+                    <div class="containerInput">
+                        <div class="inputGroup">
+                            <input type="number" required="off" id="d1_conica" title="">
+                            <label for="d1_conica">D1</label>
+                        </div>
+                        
+                        <div class="inputGroup">
+                            <input type="number" required="off" id="d2_conica" title="">
+                            <label for="d2_conica">D2</label>
+                        </div>
+                    </div>
+                    
+                    <div class="containerInput">
+                        <div class="inputGroup">
+                            <input type="number" required="off" id="modulo_conica" title="">
+                            <label for="modulo_conica">Modulo</label>
+                        </div>
+
+                        <div class="inputGroup">
+                            <input type="number" required="off" id="modulo_conica" title="">
+                            <label for="modulo_conica">Angulo φ</label>
+                        </div>
+                    </div>
+                    
+                </fieldset>
+                
+                <button onclick="calculoConica()" class="btnCalcular" type="submit">
+                    <span>calcular</span>
+                </button>
+            </div>  
+            
+                
+            <section id="statusConica">
+                    <button onclick="fechar()" class="fechar"> 
+                        <i class='bx bx-x'></i>
+                    </button>
+            
+                <h2>RESULTADO:</h2>
+                
+                <div id="resultadoConica"></div>
+            </section>
+
+        </div>
+    </section>
+    
+    <section class="home-section" id="semfim">
+        <div class="text">
+            
+            <div class="container_dados">
+                
+                <h1>PARAFUSO SEM FIM</h1>
+                
+                <fieldset>
+                    <legend><h2>PARAFUSO</h2></legend>
+                    
+                    <div class="containerInput">
+                        <div class="inputGroup">
+                            <input type="number" required="off" id="N1" title="">
+                            <label for="N1">N1</label>
+                        </div>
+                    </div>
+                    
+                </fieldset>
+                
+                
+                <fieldset>
+                    <legend><h2>COROA</h2></legend>
+                    
+                    <div class="containerInput">
+                        <div class="inputGroup">
+                            <input type="number" required="off" id="N2" title="">
+                            <label for="N2">N2</label>
+                        </div>
+
+                        <div class="inputGroup">
+                            <input type="number" required="off" id="D2" title="">
+                            <label for="D2">D2</label>
+                        </div>
+                    </div>
+                    
+                    <div class="containerInput">
+                        <div class="inputGroup">
+                            <input type="number" required="off" id="teta" title="">
+                            <label for="teta">angulo φ</label>
+                        </div>
+                        
+                        <div class="inputGroup">
+                            <input type="number" required="off" id="beta" title="">
+                            <label for="beta">angulo β</label>
+                        </div>
+                    </div>
+                    
+                    <div class="containerInput">
+                        <div class="inputGroup">
+                            <input type="number" required="off" id="M" title="">
+                            <label for="M">Modulo</label>
+                        </div>
+                    </div>
+                    
+                </fieldset>
+                
+                <button onclick="calculoSemfim()" class="btnCalcular" type="submit">
+                    <span>calcular</span>
+                </button>
+            </div>
+                
+                
+                
+            <section id="statusSemfim">
+                    <button onclick="fechar()" class="fechar"> 
+                        <i class='bx bx-x'></i>
+                    </button>
+
+                
+
+                <h2>RESULTADO:</h2>
+
+                <div id="resultadoSemfim"></div>
+            </section>
+
+        </div>
+    </section>
+
+    <section class="home-section" id="historico">
+        <div class="text">
+            <header>
+                <i class='bx bx-history'></i>
+                <h1>History</h1>
+            </header>
+            
+            <div class="history">
+               
+
+            </div>
+            
+            <!-- <details>
+                <summary>Dentes Reetos<span id="data"></span></summary>
+                <table>
+                    <thead>
+                        <th>Formulas</th>
+                        <th>Coroa</th>
+                        <th>pinhao</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>Diametro Externo</td>
+                        <td>12.4</td>
+                        <td>13.4</td>
+                        </tr>
+                        <tr>
+                        <td>Diametro Primitivo</td>
+                        <td>19</td>
+                        <td>938</td>
+                        </tr>
+                    </tbody>
+            </table>
+            </details> -->
+            
+        </div>
+    </section>
+    
+    <section class="home-section" id="about">
+        <div class="text">
+
+            <h1>Sobre Nós</h1>
+
+            <p>Este é um projeto feito pela turma de mecanica para facilitar o processo de calculos em mecanica.</p>
+            <p>Tendo como participação <a href="https://www.instagram.com/kosh.hey/" target="_blank">Alexandre Medeiros,</a> <a href="https://www.instagram.com/felip.senna1/" target="_blank">Felipe Almeida, </a> <a href="" target="_blank">Pedro Franco, </a> e <a href="" target="_blank">Diego Souza.</a></p>
+
+            <div class="containerForm">
+                <h2>Formulario de contato</h2>
+
+                <p>Nos informe caso encontre algum bug ou se quer deixar alguma sugestão para versões futuras:</p>
+
+                <form action="https://formsubmit.co/alexandre.koshy@gmail.com" method="POST" class="form">
+
+                    <!-- <input type="text" name="name" required> -->
+                    <div class="inputGroup">
+                        <input type="text" name="name" id="nome" required="off">
+                        <label for="nome">Nome</label>
+                    </div>  
+
+                    <!-- <input type="email" name="email" required> -->
+                    <div class="inputGroup">
+                        <input type="email" name="email" id="email" required="off">
+                        <label for="email">Email</label>
+                    </div>  
+
+                    <!-- <textarea name="message" placeholder="Escreva aqui"></textarea> -->
+                    <textarea name="message" id="message" placeholder="Sua mensagem" required></textarea>
+
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://alexandrekosh.github.io/CodeMec/offiline/thank.html">
+
+                    <button type="submit" class="btnCalcular">
+                        <span>Enviar</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+  
+    <script src="calculo.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
