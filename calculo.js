@@ -46,7 +46,7 @@ statusSemfim.style.display = "none"
 //Calculos
 function calculoDentes(){
 
-if((N1_dentes.value != "") && (N2_dentes.value != "") && (D1_dentes.value != "") && (D2_dentes.value != "") && (modulo_dentes.value != "") && (angulo_dentes.value != "")){
+if((N1_dentes.value != "") && (N2_dentes.value != "") && (D1_dentes.value != "") && (D2_dentes.value != "") && (modulo_dentes.value != "")){
 
   const diametroExternoCoroa =  (modulo_dentes.value * (Number(N1_dentes.value) + 2)).toFixed(2)
   const diametroExternoPinhao = (modulo_dentes.value * (Number(N2_dentes.value) + 2)).toFixed(2)
