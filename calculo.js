@@ -184,31 +184,30 @@ const diametroPrimitivoPinhao = (N2_conica.value * modulo_conica.value).toFixed(
 const diametroExternoCoroa = (parseInt(diametroPrimitivoCoroa) + 2 * modulo_conica.value * Math.cos(angB * (Math.PI / 180))).toFixed(2)
 const diametroExternoPinhao = (parseInt(diametroPrimitivoPinhao) + 2 * modulo_conica.value * Math.cos(angB * (Math.PI / 180))).toFixed(2)
 
-const diametroCuboCoroa = (2 * D1_conica.value).toFixed(2)
-const diametroCuboPinhao = (2 * D2_conica.value).toFixed(2)
+const diametroInternoCoroa = (modulo_conica.value * (N1_conica.value -(2.33 * Math.cos(angB * (Math.PI / 180))))).toFixed(2)
+const diametroInternoPinhao = (modulo_conica.value * (N2_conica.value -(2.33 * Math.cos(angB * (Math.PI / 180))))).toFixed(2)
 
-const comprimentoCuboCoroa = (1.5 * D1_conica.value).toFixed(2)
-const comprimentoCuboPinhao = (1.5 * D2_conica.value).toFixed(2)
+const diametroCuboCoroa = (1.5 * D1_conica.value).toFixed(2)
+const diametroCuboPinhao = (1.5 * D2_conica.value).toFixed(2)
 
-const gCoroa = ((diametroPrimitivoCoroa / 2) * Math.sin(angB * (Math.PI / 180))).toFixed(2)
-const gPinhao = ((diametroPrimitivoPinhao / 2) * Math.sin(angB * (Math.PI / 180))).toFixed(2)
+const comprimentoCuboCoroa = (2 * D1_conica.value).toFixed(2)
+const comprimentoCuboPinhao = (2 * D2_conica.value).toFixed(2)
 
-const tgY1 = (modulo_conica.value / gCoroa).toFixed(2)
+const gCoroa = (diametroPrimitivoCoroa / (2 * Math.sin(angB * (Math.PI / 180)))).toFixed(2)
+
+const tgY1 = (modulo_conica.value / gCoroa)
 const Y1 = Math.atan(tgY1) * (180 / Math.PI)
 const angYCoroa = Y1.toFixed(2)
 
-const tgY2 = (modulo_conica.value / gPinhao).toFixed(2)
-const Y2 = Math.atan(tgY2) * (180 / Math.PI)
-const angYPinhao = Y2.toFixed(2)
-
-const aCoroa = (parseInt(angYCoroa) + parseInt(angB)).toFixed(2)
-const aPinhao = (parseInt(angYPinhao) + parseInt(angB)).toFixed(2)
+const aCoroa = (parseInt(deg) + parseInt(Y1)).toFixed(2)
 
 const lCoroa = (gCoroa / 3).toFixed(2)
-const lPinhao = (gPinhao / 3).toFixed(2)
 
-const chavetaA = (0.25 * D1_conica.value).toFixed(2)
-const chavetaB = (0.25 * D2_conica.value).toFixed(2)
+const chavetaBCoroa = (0.25 * D1_conica.value).toFixed(2)
+const chavetaBPinhao = (0.25 * D2_conica.value).toFixed(2)
+
+const chavetaACoroa = (0.5 * chavetaBCoroa).toFixed(2)
+const chavetaAPinhao = (0.5 * chavetaBPinhao).toFixed(2)
 
 const tgZ1 = (7 * modulo_conica.value) / (6 * gCoroa)
 const Z1 = Math.atan(tgZ1) * (180 / Math.PI)
@@ -235,7 +234,11 @@ resultado_conica.innerHTML = `
                     <td>COROA</td>
                     <td>PINHÂO</td>
                 </tr>
-    
+                <tr>
+                    <td> Diametro Externo </td>
+                    <td > ${diametroExternoCoroa} mm </td>
+                    <td > ${diametroExternoPinhao} mm </td>
+                </tr>    
                 <tr>
                     <td> Diametro Primitivo </td>
                     <td > ${diametroPrimitivoCoroa} mm </td>
@@ -243,9 +246,9 @@ resultado_conica.innerHTML = `
                 </tr>
     
                 <tr>
-                    <td> Diametro Externo </td>
-                    <td > ${diametroExternoCoroa} mm </td>
-                    <td > ${diametroExternoPinhao} mm </td>
+                    <td> Diametro Interno </td>
+                    <td > ${diametroInternoCoroa} mm </td>
+                    <td > ${diametroInternoPinhao} mm </td>
                 </tr>
                 <tr>
                     <td> Diametro do Cubo </td>
@@ -257,52 +260,47 @@ resultado_conica.innerHTML = `
                     <td > ${comprimentoCuboCoroa} mm </td>
                     <td > ${comprimentoCuboPinhao} mm </td>
                 </tr>
-                 <tr>
-                    <td> Geratriz (G)</td>
-                    <td > ${gCoroa} mm </td>
-                    <td > ${gPinhao} mm </td>
-                </tr>
-                <tr>
-                    <td> Comp. do Dente (L) </td>
-                    <td > ${lCoroa} mm </td>
-                    <td > ${lPinhao} mm </td>
-                </tr>
-                <tr>
-                    <td> Y </td>
-                    <td > ${angYCoroa} ° </td>
-                    <td > ${angYPinhao} ° </td>
-                </tr>
-                    
-                <tr>
-                    <td> A </td>
-                    <td > ${aCoroa} ° </td>
-                    <td > ${aPinhao} ° </td>
-                </tr>
-                <tr>
-                    <td> Chaveta a </td>
-                    <td > ${chavetaA} mm </td>
-                    <td > ${chavetaB} mm </td>
-                </tr>
                 <tr>
                     <td> Chaveta b </td>
-                    <td > ${chavetaA} mm </td>
-                    <td > ${chavetaB} mm </td>
+                    <td > ${chavetaBCoroa} mm </td>
+                    <td > ${chavetaBPinhao} mm </td>
                 </tr>
+                    <tr>
+                    <td> Chaveta a </td>
+                    <td > ${chavetaACoroa} mm </td>
+                    <td > ${chavetaAPinhao} mm </td>
+                </tr>
+                
                 <tr>
                 <td><hr></td>
                 <td ><hr></td>
                 <td ><hr></td>
                 </tr>
                 <tr>
-                    <td> B </td>
-                    <td > ${angB} ° </td>
-                </tr>
-    
+                <td> Geratriz (G)</td>
+                <td > ${gCoroa} mm </td>
+            </tr>
+            <tr>
+                <td> Comp. do Dente (L) </td>
+                <td > ${lCoroa} mm </td>
+            </tr>
                 <tr>
                     <td> Z </td>
                     <td > ${angZ} ° </td>
                 </tr>
-    
+                <tr>
+                    <td> Y </td>
+                    <td > ${angYCoroa} ° </td>
+                </tr>
+                <tr>
+                    <td> A </td>
+                    <td > ${aCoroa} ° </td>
+                </tr>
+                <tr>
+                    <td> B </td>
+                    <td > ${angB} ° </td>
+                </tr>
+     
                 <tr>
                     <td> C </td>
                     <td > ${C} ° </td>
@@ -413,6 +411,7 @@ const reforcoDente = ((modulo_semfim.value * Math.PI) / 2).toFixed(2)
 const larguraChaveta = (D2_semfim.value / 4).toFixed(2)
 
 const profundidadeChaveta = (D2_semfim.value / 4 / 2).toFixed(2)
+
 
 reusltado_semfim.innerHTML = `
     <div class="tableFlex">  
