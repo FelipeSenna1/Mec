@@ -79,6 +79,12 @@ if((N1_dentes.value != "") && (N2_dentes.value != "") && (D1_dentes.value != "")
   const alturaDente = (2.16 * modulo_dentes.value).toFixed(2)
 
   const espessura = (passo / 2).toFixed(2)
+
+  const alturachavetaCoroa = (5 + (D1_dentes.value / 5)).toFixed(2)
+  const alturachavetaPinhao = (5 + (D2_dentes.value / 5)).toFixed(2)
+
+  const largurachavetaCoroa = ((alturachavetaCoroa.value / 2)).toFixed(2)
+  const largurachavetaPinhao = (alturachavetaPinhao.value / 2).toFixed(2)
     
     
     resultado_dentes.innerHTML = `
@@ -118,6 +124,16 @@ if((N1_dentes.value != "") && (N2_dentes.value != "") && (D1_dentes.value != "")
                         <td>Comprimento do cubo :</td>
                         <td > ${comprimentoDiametroCuboCoroa} mm </td>
                         <td > ${comprimentoDiametroCuboPinhao} mm </td>
+                    </tr>
+                    <tr>
+                        <td>Altura Chaveta :</td>
+                        <td > ${alturachavetaCoroa} mm </td>
+                        <td > ${alturachavetaPinhao} mm </td>
+                    </tr>
+                    <tr>
+                        <td>Largura Chaveta :</td>
+                        <td > ${largurachavetaCoroa} mm </td>
+                        <td > ${largurachavetaPinhao} mm </td>
                     </tr>
                     <tr>
                         <td><hr></td>
