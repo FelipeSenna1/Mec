@@ -83,8 +83,8 @@ if((N1_dentes.value != "") && (N2_dentes.value != "") && (D1_dentes.value != "")
   const alturachavetaCoroa = (5 + (D1_dentes.value / 5)).toFixed(2)
   const alturachavetaPinhao = (5 + (D2_dentes.value / 5)).toFixed(2)
 
-  const largurachavetaCoroa = ((alturachavetaCoroa.value / 2)).toFixed(2)
-  const largurachavetaPinhao = (alturachavetaPinhao.value / 2).toFixed(2)
+  const largurachavetaCoroa = (alturachavetaCoroa / 2).toFixed(2)
+  const largurachavetaPinhao = (alturachavetaPinhao / 2).toFixed(2)
     
     
     resultado_dentes.innerHTML = `
@@ -215,7 +215,7 @@ const tgY1 = (modulo_conica.value / gCoroa)
 const Y1 = Math.atan(tgY1) * (180 / Math.PI)
 const angYCoroa = Y1.toFixed(2)
 
-const aCoroa = (parseInt(deg) + parseInt(Y1)).toFixed(2)
+const aCoroa = (parseFloat(angB) + parseFloat(angYCoroa)).toFixed(2)
 
 const lCoroa = (gCoroa / 3).toFixed(2)
 
@@ -229,9 +229,9 @@ const tgZ1 = (7 * modulo_conica.value) / (6 * gCoroa)
 const Z1 = Math.atan(tgZ1) * (180 / Math.PI)
 const angZ = Z1.toFixed(2)
 
-const C = (parseInt(angB) - parseInt(angZ)).toFixed(2)
+const C = (parseFloat(angB) - parseFloat(angZ)).toFixed(2)
 
-const D = (90 - angB).toFixed(2)
+const D = (90 - parseFloat(angB)).toFixed(2)
 
 const H = (2.166 * modulo_conica.value).toFixed(2)
 
@@ -240,7 +240,6 @@ const F = (0.167 * modulo_conica.value).toFixed(2)
 const W = (2.166 * modulo_conica.value * 1.25).toFixed(2)
 
 const E = (1.57 * modulo_conica.value).toFixed(2)
-
 
 resultado_conica.innerHTML = `
     <table>
