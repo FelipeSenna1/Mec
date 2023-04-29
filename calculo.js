@@ -29,7 +29,7 @@ let reusltado_semfim = document.getElementById("resultadoSemfim")
 
 //Mensagem de prencher os campos
 function mensagem(){
-alert('Preencha todos os campo 🔴')
+alert('🔴 Preencha todos os campos 🔴')
 }
 
 let statusDentes = document.getElementById("statusDentes")
@@ -58,6 +58,7 @@ if((N1_dentes.value != "") && (N2_dentes.value != "") && (D1_dentes.value != "")
   const diametroInternoPinhao = (diametroExternoPinhao - (2 * (2.16 * modulo_dentes.value))).toFixed(2) 
 
   const deg = Math.cos(angulo_dentes.value * (Math.PI / 180))
+  
   const diametroBaseCoroa = (diametroPrimitivoCoroa * deg).toFixed(2)
   const diametroBasePinhao = (diametroPrimitivoPinhao * deg).toFixed(2) 
 
