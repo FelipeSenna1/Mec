@@ -71,15 +71,13 @@ if((N1_dentes.value != "") && (N2_dentes.value != "") && (D1_dentes.value != "")
 
   const passo = (modulo_dentes.value * Math.PI).toFixed(2)
 
-  const reforco = (passo/2).toFixed(2)
+  const reforco = (passo / 2).toFixed(2)
 
   const comprimentoDente = (8 * modulo_dentes.value).toFixed(2)
 
   const corpoRoda = (comprimentoDente * 0.6).toFixed(2)
 
   const alturaDente = (2.16 * modulo_dentes.value).toFixed(2)
-
-  const espessura = (passo / 2).toFixed(2)
 
   const alturachavetaCoroa = (5 + (D1_dentes.value / 5)).toFixed(2)
   const alturachavetaPinhao = (5 + (D2_dentes.value / 5)).toFixed(2)
@@ -171,13 +169,11 @@ if((N1_dentes.value != "") && (N2_dentes.value != "") && (D1_dentes.value != "")
                     </tr>
                     <tr>
                         <td>Espessura :</td> 
-                        <td > ${espessura} mm </td>
+                        <td > ${reforco} mm </td>
                     </tr>
                 </tbody>
             </table>
     `
-
-    console.log(diametroExternoCoroa);
 
     statusDentes.style.display = 'inline-block'
         
@@ -204,11 +200,11 @@ const diametroExternoPinhao = (parseInt(diametroPrimitivoPinhao) + 2 * modulo_co
 const diametroInternoCoroa = (modulo_conica.value * (N1_conica.value -(2.33 * Math.cos(angB * (Math.PI / 180))))).toFixed(2)
 const diametroInternoPinhao = (modulo_conica.value * (N2_conica.value -(2.33 * Math.cos(angB * (Math.PI / 180))))).toFixed(2)
 
-const diametroCuboCoroa = (1.5 * D1_conica.value).toFixed(2)
-const diametroCuboPinhao = (1.5 * D2_conica.value).toFixed(2)
+const diametroCuboCoroa = (2 * D1_conica.value).toFixed(2)
+const diametroCuboPinhao = (2 * D2_conica.value).toFixed(2)
 
-const comprimentoCuboCoroa = (2 * D1_conica.value).toFixed(2)
-const comprimentoCuboPinhao = (2 * D2_conica.value).toFixed(2)
+const comprimentoCuboCoroa = (1.5 * D1_conica.value).toFixed(2)
+const comprimentoCuboPinhao = (1.5 * D2_conica.value).toFixed(2)
 
 const gCoroa = (diametroPrimitivoCoroa / (2 * Math.sin(angB * (Math.PI / 180)))).toFixed(2)
 
@@ -300,52 +296,52 @@ resultado_conica.innerHTML = `
                 <td> Comp. do Dente (L) </td>
                 <td > ${lCoroa} mm </td>
             </tr>
-                <tr>
-                    <td> Z </td>
-                    <td > ${angZ} ° </td>
-                </tr>
-                <tr>
-                    <td> Y </td>
-                    <td > ${angYCoroa} ° </td>
-                </tr>
-                <tr>
-                    <td> A </td>
-                    <td > ${aCoroa} ° </td>
-                </tr>
-                <tr>
-                    <td> B </td>
-                    <td > ${angB} ° </td>
-                </tr>
-     
-                <tr>
-                    <td> C </td>
-                    <td > ${C} ° </td>
-                </tr>
+            <tr>
+                <td> Profundidade do Rasgo (W) </td>
+                <td > ${W} mm </td>
+            </tr>
+           
+            <tr>
+                <td> Ang. Cone Externo (A) </td>
+                <td > ${aCoroa} ° </td>
+            </tr>
+            <tr>
+                <td> Ang. Cone Primitivo (B) </td>
+                <td > ${angB} ° </td>
+            </tr>
+ 
+            <tr>
+                <td> Ang. Cone Interno (C) </td>
+                <td > ${C} ° </td>
+            </tr>
+
+            <tr>
+                <td> Ang. Cone Posterior (D) </td>
+                <td > ${D} ° </td>
+            </tr>
+            <tr>
+            <td> Ang. Pé do Dente (Z) </td>
+            <td > ${angZ} ° </td>
+        </tr>
+        <tr>
+            <td> Ang Cabeça do Dente (Y) </td>
+            <td > ${angYCoroa} ° </td>
+        </tr>
+
+            <tr>
+                <td> Altura do Dente (H) </td>
+                <td > ${H} mm </td>
+            </tr>
+
+            <tr>
+                <td> Folga do Pé do Dente (F) </td>
+                <td > ${F} mm </td>
+            </tr>
     
-                <tr>
-                    <td> D </td>
-                    <td > ${D} ° </td>
-                </tr>
-    
-                <tr>
-                    <td> H </td>
-                    <td > ${H} mm </td>
-                </tr>
-    
-                <tr>
-                    <td> F </td>
-                    <td > ${F} mm </td>
-                </tr>
-    
-                <tr>
-                    <td> W </td>
-                    <td > ${W} mm </td>
-                </tr>
-    
-                <tr>
-                    <td> E </td>
-                    <td > ${E} mm </td>
-                </tr>
+            <tr>
+                <td> Espessura do Dente (E) </td>
+                <td > ${E} mm </td>
+            </tr>   
             </tbody>
         </table>
 `
