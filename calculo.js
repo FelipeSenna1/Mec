@@ -186,10 +186,15 @@ function calculoConica(){
 
 if((N1_conica.value != "") && (N2_conica.value != "") && (D1_conica.value != "") && (D2_conica.value != "") && (modulo_conica.value != "")) {
 
-const divisao = parseInt(N1_conica.value) / parseInt(N2_conica.value)
+const divisao1 = parseInt(N1_conica.value) / parseInt(N2_conica.value)
 // const rad = Math.atan(divisao)
-const deg = Math.atan(divisao) * (180 / Math.PI)
-const angB = deg.toFixed(2)
+const deg1 = Math.atan(divisao1) * (180 / Math.PI)
+const angB = deg1.toFixed(2)
+
+const divisao2 = parseInt(N2_conica.value) / parseInt(N1_conica.value)
+const deg2 = Math.atan(divisao2) * (180 / Math.PI)
+const angb = deg2.toFixed(2)
+
 
 const diametroPrimitivoCoroa = (N1_conica.value * modulo_conica.value).toFixed(2)
 const diametroPrimitivoPinhao = (N2_conica.value * modulo_conica.value).toFixed(2)
@@ -213,6 +218,7 @@ const Y1 = Math.atan(tgY1) * (180 / Math.PI)
 const angYCoroa = Y1.toFixed(2)
 
 const aCoroa = (parseFloat(angB) + parseFloat(angYCoroa)).toFixed(2)
+const aPinhao = (parseFloat(angb) + parseFloat(angYCoroa)).toFixed(2)
 
 const lCoroa = (gCoroa / 3).toFixed(2)
 
@@ -227,8 +233,10 @@ const Z1 = Math.atan(tgZ1) * (180 / Math.PI)
 const angZ = Z1.toFixed(2)
 
 const C = (parseFloat(angB) - parseFloat(angZ)).toFixed(2)
+const c = (parseFloat(angb) - parseFloat(angZ)).toFixed(2)
 
 const D = (90 - parseFloat(angB)).toFixed(2)
+const d = (90 - parseFloat(angb)).toFixed(2)
 
 const H = (2.166 * modulo_conica.value).toFixed(2)
 
@@ -273,16 +281,37 @@ resultado_conica.innerHTML = `
                     <td > ${comprimentoCuboPinhao} mm </td>
                 </tr>
                 <tr>
-                    <td> Chaveta b </td>
-                    <td > ${chavetaBCoroa} mm </td>
-                    <td > ${chavetaBPinhao} mm </td>
-                </tr>
-                    <tr>
-                    <td> Chaveta a </td>
-                    <td > ${chavetaACoroa} mm </td>
-                    <td > ${chavetaAPinhao} mm </td>
-                </tr>
-                
+                <td> Ang. Cone Externo (A) </td>
+                <td > ${aCoroa} ° </td>
+                <td > ${aPinhao} ° </td>
+            </tr>
+            <tr>
+                <td> Ang. Cone Primitivo (B) </td>
+                <td > ${angB} ° </td>
+                <td > ${angb} ° </td>
+            </tr>
+ 
+            <tr>
+                <td> Ang. Cone Interno (C) </td>
+                <td > ${C} ° </td>
+                <td > ${c} ° </td>
+            </tr>
+
+            <tr>
+                <td> Ang. Cone Posterior (D) </td>
+                <td > ${D} ° </td>
+                <td > ${d} ° </td>
+            </tr>
+            <tr>
+            <td> Chaveta b </td>
+            <td > ${chavetaBCoroa} mm </td>
+            <td > ${chavetaBPinhao} mm </td>
+        </tr>
+            <tr>
+            <td> Chaveta a </td>
+            <td > ${chavetaACoroa} mm </td>
+            <td > ${chavetaAPinhao} mm </td>
+        </tr>
                 <tr>
                 <td><hr></td>
                 <td ><hr></td>
@@ -299,26 +328,7 @@ resultado_conica.innerHTML = `
             <tr>
                 <td> Profundidade do Rasgo (W) </td>
                 <td > ${W} mm </td>
-            </tr>
-           
-            <tr>
-                <td> Ang. Cone Externo (A) </td>
-                <td > ${aCoroa} ° </td>
-            </tr>
-            <tr>
-                <td> Ang. Cone Primitivo (B) </td>
-                <td > ${angB} ° </td>
-            </tr>
- 
-            <tr>
-                <td> Ang. Cone Interno (C) </td>
-                <td > ${C} ° </td>
-            </tr>
-
-            <tr>
-                <td> Ang. Cone Posterior (D) </td>
-                <td > ${D} ° </td>
-            </tr>
+            </tr>  
             <tr>
             <td> Ang. Pé do Dente (Z) </td>
             <td > ${angZ} ° </td>
