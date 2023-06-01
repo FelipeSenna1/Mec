@@ -6,14 +6,16 @@ D2_dentes = document.getElementById('d2_dentes'),
 N1_dentes = document.getElementById('n1_dentes'),
 N2_dentes = document.getElementById('n2_dentes'),
 angulo_dentes = document.getElementById('angulo_dentes'),
-modulo_dentes = document.getElementById('modulo_dentes');
+modulo_dentes = document.getElementById('modulo_dentes'),
+escala_dentes = document.getElementById('escala_dentes');
 
 /*  CONICA  */ 
 let N1_conica = document.getElementById("n1_conica"),
 N2_conica = document.getElementById("n2_conica"),
 D1_conica = document.getElementById("d1_conica"),
 D2_conica = document.getElementById("d2_conica"),
-modulo_conica = document.getElementById("modulo_conica");
+modulo_conica = document.getElementById("modulo_conica"),
+escala_conica = document.getElementById('escala_conica');
 
 /*   Sem Fim   */ 
 let modulo_semfim = document.getElementById("M"),
@@ -21,7 +23,8 @@ AngBeta_semfim = document.getElementById("beta"),
 AngTeta_semfim = document.getElementById("teta"),
 D2_semfim = document.getElementById("D2"),
 N1_semfim = document.getElementById("N1"),
-N2_semfim = document.getElementById("N2");
+N2_semfim = document.getElementById("N2"),
+escala_semfim = document.getElementById('escala_semfim');
 
 let resultado_dentes = document.getElementById("resultadoDentes")
 let resultado_conica = document.getElementById("resultadoConica")
@@ -46,7 +49,8 @@ statusSemfim.style.display = "none"
 //Calculos
 function calculoDentes(){
 
-if((N1_dentes.value != "") && (N2_dentes.value != "") && (D1_dentes.value != "") && (D2_dentes.value != "") && (modulo_dentes.value != "")){
+if((N1_dentes.value != "") && (N2_dentes.value != "") && (D1_dentes.value != "") && (D2_dentes.value != "") && (modulo_dentes.value != "")
+ && (escala_dentes != "") ){
 
   const diametroExternoCoroa =  (modulo_dentes.value * (Number(N1_dentes.value) + 2)).toFixed(2)
   const diametroExternoPinhao = (modulo_dentes.value * (Number(N2_dentes.value) + 2)).toFixed(2)
@@ -96,43 +100,43 @@ if((N1_dentes.value != "") && (N2_dentes.value != "") && (D1_dentes.value != "")
                     </tr>
                     <tr>
                         <td>Diametro externo :</td>
-                        <td > ${diametroExternoCoroa} mm </td>
-                        <td > ${diametroExternoPinhao} mm </td>
+                        <td > ${diametroExternoCoroa * escala_dentes.value} mm </td>
+                        <td > ${diametroExternoPinhao * escala_dentes.value} mm </td>
                     </tr>
                     <tr>
                         <td>Diametro primitivo :</td>
-                        <td > ${diametroPrimitivoCoroa} mm </td>
-                        <td > ${diametroPrimitivoPinhao} mm </td>
+                        <td > ${diametroPrimitivoCoroa * escala_dentes.value} mm </td>
+                        <td > ${diametroPrimitivoPinhao * escala_dentes.value} mm </td>
                     </tr>
                     <tr>
                         <td>Diametro de base :</td>
-                        <td > ${diametroBaseCoroa} mm </td>
-                        <td > ${diametroBasePinhao} mm </td>
+                        <td > ${diametroBaseCoroa * escala_dentes.value} mm </td>
+                        <td > ${diametroBasePinhao * escala_dentes.value} mm </td>
                     </tr>
                     <tr>
                         <td>Diametro interno :</td>
-                        <td > ${diametroInternoCoroa} mm </td>
-                        <td > ${diametroInternoPinhao} mm </td>
+                        <td > ${diametroInternoCoroa * escala_dentes.value} mm </td>
+                        <td > ${diametroInternoPinhao * escala_dentes.value} mm </td>
                     </tr>
                     <tr>
                         <td>Diametro do cubo :</td>
-                        <td > ${comprimentoDiametroCuboCoroa} mm </td>
-                        <td > ${comprimentoDiametroCuboPinhao} mm </td>
+                        <td > ${comprimentoDiametroCuboCoroa * escala_dentes.value} mm </td>
+                        <td > ${comprimentoDiametroCuboPinhao * escala_dentes.value} mm </td>
                     </tr>
                     <tr>
                         <td>Comprimento do cubo :</td>
-                        <td > ${comprimentoDiametroCuboCoroa} mm </td>
-                        <td > ${comprimentoDiametroCuboPinhao} mm </td>
+                        <td > ${comprimentoDiametroCuboCoroa * escala_dentes.value} mm </td>
+                        <td > ${comprimentoDiametroCuboPinhao * escala_dentes.value} mm </td>
                     </tr>
                     <tr>
                         <td>Altura Chaveta :</td>
-                        <td > ${alturachavetaCoroa} mm </td>
-                        <td > ${alturachavetaPinhao} mm </td>
+                        <td > ${alturachavetaCoroa * escala_dentes.value} mm </td>
+                        <td > ${alturachavetaPinhao * escala_dentes.value} mm </td>
                     </tr>
                     <tr>
                         <td>Largura Chaveta :</td>
-                        <td > ${largurachavetaCoroa} mm </td>
-                        <td > ${largurachavetaPinhao} mm </td>
+                        <td > ${largurachavetaCoroa * escala_dentes.value} mm </td>
+                        <td > ${largurachavetaPinhao * escala_dentes.value} mm </td>
                     </tr>
                     <tr>
                         <td><hr></td>
@@ -141,35 +145,35 @@ if((N1_dentes.value != "") && (N2_dentes.value != "") && (D1_dentes.value != "")
                     </tr>
                     <tr>
                         <td>Passo :</td>
-                        <td > ${passo} mm </td>
+                        <td > ${passo * escala_dentes.value} mm </td>
                     </tr>
                     <tr>
                         <td>Folga no pé do dente :</td>
-                        <td > ${folgaDente} mm </td>
+                        <td > ${folgaDente * escala_dentes.value} mm </td>
                     </tr>
                     <tr>
                         <td>Altura do dente:</td>
-                        <td > ${alturaDente} mm </td>
+                        <td > ${alturaDente * escala_dentes.value} mm </td>
                     </tr>
                     <tr>
                         <td>Reforço (G) :</td>
-                        <td > ${reforco} mm </td>
+                        <td > ${reforco * escala_dentes.value} mm </td>
                     </tr>
                     <tr>
                         <td>Comprimento do Dente :</td>
-                        <td > ${comprimentoDente} mm </td>
+                        <td > ${comprimentoDente * escala_dentes.value} mm </td>
                     </tr>
                     <tr>
                         <td>Corpo da Roda :</td>
-                        <td > ${corpoRoda} mm </td>
+                        <td > ${corpoRoda * escala_dentes.value} mm </td>
                     </tr>
                     <tr>
                         <td>Distancia entre Centros :</td>
-                        <td > ${distanciaCentros} mm </td>
+                        <td > ${distanciaCentros * escala_dentes.value} mm </td>
                     </tr>
                     <tr>
                         <td>Espessura :</td> 
-                        <td > ${reforco} mm </td>
+                        <td > ${reforco * escala_dentes.value} mm </td>
                     </tr>
                 </tbody>
             </table>
@@ -184,7 +188,8 @@ if((N1_dentes.value != "") && (N2_dentes.value != "") && (D1_dentes.value != "")
 
 function calculoConica(){
 
-if((N1_conica.value != "") && (N2_conica.value != "") && (D1_conica.value != "") && (D2_conica.value != "") && (modulo_conica.value != "")) {
+if((N1_conica.value != "") && (N2_conica.value != "") && (D1_conica.value != "") && (D2_conica.value != "") && (modulo_conica.value != "")
+&& (escala_conica.value != "")) {
 
 const divisao1 = parseInt(N1_conica.value) / parseInt(N2_conica.value)
 // const rad = Math.atan(divisao)
@@ -256,61 +261,61 @@ resultado_conica.innerHTML = `
                 </tr>
                 <tr>
                     <td> Diametro Externo </td>
-                    <td > ${diametroExternoCoroa} mm </td>
-                    <td > ${diametroExternoPinhao} mm </td>
+                    <td > ${diametroExternoCoroa * escala_conica.value} mm </td>
+                    <td > ${diametroExternoPinhao * escala_conica.value} mm </td>
                 </tr>    
                 <tr>
                     <td> Diametro Primitivo </td>
-                    <td > ${diametroPrimitivoCoroa} mm </td>
-                    <td > ${diametroPrimitivoPinhao} mm </td>
+                    <td > ${diametroPrimitivoCoroa * escala_conica.value} mm </td>
+                    <td > ${diametroPrimitivoPinhao * escala_conica.value} mm </td>
                 </tr>
     
                 <tr>
                     <td> Diametro Interno </td>
-                    <td > ${diametroInternoCoroa} mm </td>
-                    <td > ${diametroInternoPinhao} mm </td>
+                    <td > ${diametroInternoCoroa * escala_conica.value} mm </td>
+                    <td > ${diametroInternoPinhao * escala_conica.value} mm </td>
                 </tr>
                 <tr>
                     <td> Diametro do Cubo </td>
-                    <td > ${diametroCuboCoroa} mm </td>
-                    <td > ${diametroCuboPinhao} mm </td>
+                    <td > ${diametroCuboCoroa * escala_conica.value} mm </td>
+                    <td > ${diametroCuboPinhao * escala_conica.value} mm </td>
                 </tr>
                 <tr>
                     <td> Comprimento do Cubo </td>
-                    <td > ${comprimentoCuboCoroa} mm </td>
-                    <td > ${comprimentoCuboPinhao} mm </td>
+                    <td > ${comprimentoCuboCoroa * escala_conica.value} mm </td>
+                    <td > ${comprimentoCuboPinhao * escala_conica.value} mm </td>
                 </tr>
                 <tr>
                 <td> Ang. Cone Externo (A) </td>
-                <td > ${aCoroa} ° </td>
-                <td > ${aPinhao} ° </td>
+                <td > ${aCoroa * escala_conica.value} ° </td>
+                <td > ${aPinhao * escala_conica.value} ° </td>
             </tr>
             <tr>
                 <td> Ang. Cone Primitivo (B) </td>
-                <td > ${angB} ° </td>
-                <td > ${angb} ° </td>
+                <td > ${angB * escala_conica.value} ° </td>
+                <td > ${angb * escala_conica.value} ° </td>
             </tr>
  
             <tr>
                 <td> Ang. Cone Interno (C) </td>
-                <td > ${C} ° </td>
-                <td > ${c} ° </td>
+                <td > ${C * escala_conica.value} ° </td>
+                <td > ${c * escala_conica.value} ° </td>
             </tr>
 
             <tr>
                 <td> Ang. Cone Posterior (D) </td>
-                <td > ${D} ° </td>
-                <td > ${d} ° </td>
+                <td > ${D * escala_conica.value} ° </td>
+                <td > ${d * escala_conica.value} ° </td>
             </tr>
             <tr>
             <td> Chaveta b </td>
-            <td > ${chavetaBCoroa} mm </td>
-            <td > ${chavetaBPinhao} mm </td>
+            <td > ${chavetaBCoroa * escala_conica.value} mm </td>
+            <td > ${chavetaBPinhao * escala_conica.value} mm </td>
         </tr>
             <tr>
             <td> Chaveta a </td>
-            <td > ${chavetaACoroa} mm </td>
-            <td > ${chavetaAPinhao} mm </td>
+            <td > ${chavetaACoroa * escala_conica.value} mm </td>
+            <td > ${chavetaAPinhao * escala_conica.value} mm </td>
         </tr>
                 <tr>
                 <td><hr></td>
@@ -319,38 +324,38 @@ resultado_conica.innerHTML = `
                 </tr>
                 <tr>
                 <td> Geratriz (G)</td>
-                <td > ${gCoroa} mm </td>
+                <td > ${gCoroa * escala_conica.value} mm </td>
             </tr>
             <tr>
                 <td> Comp. do Dente (L) </td>
-                <td > ${lCoroa} mm </td>
+                <td > ${lCoroa * escala_conica.value} mm </td>
             </tr>
             <tr>
                 <td> Profundidade do Rasgo (W) </td>
-                <td > ${W} mm </td>
+                <td > ${W * escala_conica.value} mm </td>
             </tr>  
             <tr>
             <td> Ang. Pé do Dente (Z) </td>
-            <td > ${angZ} ° </td>
+            <td > ${angZ * escala_conica.value} ° </td>
         </tr>
         <tr>
             <td> Ang Cabeça do Dente (Y) </td>
-            <td > ${angYCoroa} ° </td>
+            <td > ${angYCoroa * escala_conica.value} ° </td>
         </tr>
 
             <tr>
                 <td> Altura do Dente (H) </td>
-                <td > ${H} mm </td>
+                <td > ${H * escala_conica.value} mm </td>
             </tr>
 
             <tr>
                 <td> Folga do Pé do Dente (F) </td>
-                <td > ${F} mm </td>
+                <td > ${F * escala_conica.value} mm </td>
             </tr>
     
             <tr>
                 <td> Espessura do Dente (E) </td>
-                <td > ${E} mm </td>
+                <td > ${E * escala_conica.value} mm </td>
             </tr>   
             </tbody>
         </table>
@@ -366,73 +371,74 @@ mensagem()
 
 function calculoSemfim(){
 
-if((N1_semfim.value != "") && (D2_semfim.value != "") && (N2_semfim.value != "") && (AngTeta_semfim.value != "") && (AngBeta_semfim.value != "") && (modulo_semfim.value != "")){
+if((N1_semfim.value != "") && (D2_semfim.value != "") && (N2_semfim.value != "") && (AngTeta_semfim.value != "") && (AngBeta_semfim.value != "") 
+&& (modulo_semfim.value != "") && (escala_semfim.value != "")){
 
+// Ninguém nunca vai saber o trabalho do caralho que deu pra concertar/fazer essa merda   -FelipSenna
 
-const moduloCircuferencialCoroa = (modulo_semfim.value / Math.cos(AngBeta_semfim.value * (Math.PI / 180))).toFixed(2)
-const moduloCircuferencialPinhao = (modulo_semfim.value / Math.sin(AngBeta_semfim.value * (Math.PI / 180))).toFixed(2)
+const map = (modulo_semfim.value / Math.cos(AngBeta_semfim.value * (Math.PI / 180))).toFixed(2)
+const mcp = (modulo_semfim.value / Math.sin(AngBeta_semfim.value * (Math.PI / 180))).toFixed(2)
 
-const diametroPrimitivoCoroa = (moduloCircuferencialCoroa * N1_semfim.value).toFixed(2)
-const diametroPrimitivoPinhao = (moduloCircuferencialPinhao * N2_semfim.value).toFixed(2)
+// map = mcc  e   mcp  = mac   
 
-const diametroExternoCoroa = ((modulo_semfim.value / Math.sin(AngBeta_semfim.value * (Math.PI / 180))) * N1_semfim.value + 2 * modulo_semfim.value).toFixed(2)
-const diametroExternoPinhao =  (parseInt(diametroPrimitivoPinhao) + 2 * modulo_semfim.value).toFixed(2)
+const pn = (modulo_semfim.value * Math.PI).toFixed(2)
 
-const diametroInternoCoroa = (diametroPrimitivoCoroa - modulo_semfim.value * 2.334).toFixed(2)
-const diametroInternoPinhao = (diametroPrimitivoPinhao - 2.334 * modulo_semfim.value).toFixed(2)
+const pap = (map * Math.PI).toFixed(2)
 
-const moduloAxialCoroa = (modulo_semfim.value / Math.cos(AngBeta_semfim.value * (Math.PI / 180))).toFixed(2)
-const moduloAxialPinhao = (modulo_semfim.value / Math.sin(AngBeta_semfim.value * (Math.PI / 180))).toFixed(2)
+const pcp = (mcp * Math.PI).toFixed(2)
+const pcc = (map * Math.PI).toFixed(2)
 
-const passoCircuferencialCoroa = (moduloCircuferencialCoroa * Math.PI).toFixed(2)
-const passoCircuferencialPinhao = ((moduloCircuferencialPinhao * (Math.PI / 180)) *Math.PI).toFixed(2)
+const php = (pap * N1_semfim.value).toFixed(2)
 
-//(L1)
-const comprimentoRoscaParafuso = (2 * moduloAxialCoroa * (1 + Math.sqrt(N2_semfim.value))).toFixed(2)
-//(L2)
-const larguraCoroa = (8 * modulo_semfim.value).toFixed(2)
-//(L3)
-const espessuraCorpoEngrenagem = (8 * modulo_semfim.value * 0.6).toFixed(2)
+const dpp = (mcp * N1_semfim.value).toFixed(2)
+const dpc = (map * N2_semfim.value).toFixed(2)
 
+const dep = (parseFloat(dpp) + (2 * modulo_semfim.value)).toFixed(2)
+const dec = (parseFloat(dpc) + (2 * modulo_semfim.value)).toFixed(2)
 
+const dip = (dpp - (2.334 * modulo_semfim.value)).toFixed(2)
+const dic = (dpc - (2.334 * modulo_semfim.value)).toFixed(2)
 
-const passoNormalCoroa = (modulo_semfim.value * Math.PI).toFixed(2)
+// ap e ac = modulo
 
-const passoHelicePinhao = ((modulo_semfim.value / Math.cos(AngBeta_semfim.value * (Math.PI / 180))) * Math.PI * N1_semfim.value).toFixed(2)
+const bp = (1.167 * modulo_semfim.value).toFixed(2)
+// bp = bc
 
-const passoAxialPinhao = ((modulo_semfim.value / Math.cos(AngBeta_semfim.value * (Math.PI / 180))) * Math.PI).toFixed(2)
+const hp = (modulo_semfim.value + bp)
+// hp = hc
 
-const alturaCabeca = modulo_semfim.value
+const ep = (0.167 * modulo_semfim.value).toFixed(2)
+// ep = ec
 
-const alturaPe = (1.167 * modulo_semfim.value).toFixed(2)
+const eep = (pn / 2).toFixed(2)
 
-const alturaTotal = (parseInt(modulo_semfim.value) + 1.167 * modulo_semfim.value).toFixed(2)
+const l1 = (2 * map * (1 + Math.sqrt(N2_semfim.value))).toFixed(2)
 
-const folgaPe = (0.167 * modulo_semfim.value).toFixed(2)
+const l2 = (8 * modulo_semfim.value).toFixed(2)
 
-const espessuraPinhao = ((modulo_semfim.value * Math.PI) / 2).toFixed(2)
+const l3 = (0.6 * l2).toFixed(2)
 
-const diametroCuboCoroa = ((D2_semfim.value - 5) * 2).toFixed(2)
+const db = (dpc * Math.cos(AngTeta_semfim.value * (Math.PI / 180))).toFixed(2)
 
-const comprimentoCubo = (D2_semfim.value * 1.5).toFixed(2)
+const de2m = (parseFloat(dpc) + 3 * modulo_semfim.value).toFixed(2)
 
-const diametroBaseCoroa = (diametroPrimitivoPinhao * Math.cos(AngTeta_semfim.value * (Math.PI / 180))).toFixed(2)
+const k = (6.5 * modulo_semfim.value).toFixed(2)
 
-const diametroExternoMaximo = (parseInt(diametroPrimitivoPinhao) + 3 * modulo_semfim.value).toFixed(2)
+const g = (pn / 2).toFixed(2)
 
-const distanciaCentros = ((moduloCircuferencialCoroa * N1_semfim.value + moduloCircuferencialPinhao * N2_semfim.value) / 2).toFixed(2)
+const i = ((Number(dpp) + Number(dpc)) / 2).toFixed(2)
 
-const raioExternoGarganta = (distanciaCentros - diametroInternoPinhao / 2).toFixed(2)
+const reg = (i - (dic / 2)).toFixed(2)
 
-const raioInternoGarganta = (distanciaCentros - diametroExternoPinhao / 2).toFixed(2)
+const rig = (i - (dec / 2)).toFixed(2)
 
-const comprimentoFundo = (6.5 * modulo_semfim.value).toFixed(2)
+const s = (0.25 * D2_semfim.value).toFixed(2)
 
-const reforcoDente = ((modulo_semfim.value * Math.PI) / 2).toFixed(2)
+const t = (0.5 * s).toFixed(2)
 
-const larguraChaveta = (D2_semfim.value / 4).toFixed(2)
+const dc = (2 * (D2_semfim.value - 5)).toFixed(2)
 
-const profundidadeChaveta = (D2_semfim.value / 4 / 2).toFixed(2)
+const cc = (1.5 * D2_semfim.value).toFixed(2)
 
 
 reusltado_semfim.innerHTML = `
@@ -441,95 +447,89 @@ reusltado_semfim.innerHTML = `
                 <tbody>
                     <tr>
                         <td>FORMULAS</td>
-                        <td>COROA</td>
                         <td>PARAFUSO</td>
-                    </tr>
-                    
-                    <tr>
-                        <td> Modulo Axial </td>
-                        <td > ${moduloAxialCoroa} mm </td>
-                        <td > ${moduloAxialPinhao} mm </td>
-                    </tr>
-                    
-                    <tr>
-                        <td> Modulo circunferencial </td>
-                        <td > ${moduloCircuferencialCoroa} mm </td>
-                        <td > ${moduloCircuferencialPinhao} mm </td>
-                    </tr>
-                    
-                    <tr>
-                        <td> Diametro Primitivo </td>
-                        <td > ${diametroPrimitivoCoroa} mm </td>
-                        <td > ${diametroPrimitivoPinhao} mm </td>
+                        <td>COROA</td>
                     </tr>
                     
                     <tr>
                         <td> Diametro Externo </td>
-                        <td > ${diametroExternoCoroa} mm </td>
-                        <td > ${diametroExternoPinhao} mm </td>
+                        <td > ${dep * escala_semfim.value} mm </td>
+                        <td > ${dec * escala_semfim.value} mm </td>
                     </tr>
-                    
+                
                     <tr>
-                        <td> Diametro Base </td>
-                        <td > ${diametroBaseCoroa} mm </td>
+                        <td> Diametro Primitivo </td>
+                        <td > ${dpp * escala_semfim.value} mm </td>
+                        <td > ${dpc * escala_semfim.value} mm </td>
                     </tr>
-                    
+
                     <tr>
                         <td> Diametro Interno </td>
-                        <td > ${diametroInternoCoroa} mm </td>
-                        <td > ${diametroInternoPinhao} mm </td>
+                        <td > ${dip * escala_semfim.value} mm </td>
+                        <td > ${dic * escala_semfim.value} mm </td>
                     </tr>
+                            
+                    <tr>
+                        <td> Modulo Axial </td>
+                        <td > ${map * escala_semfim.value} mm </td>
+                        <td > ${mcp * escala_semfim.value} mm </td>
+                    </tr>
+                    
+                    <tr>
+                        <td> Modulo Circunferencial </td>
+                        <td > ${mcp * escala_semfim.value} mm </td>
+                        <td > ${map * escala_semfim.value} mm </td>
+                    </tr>
+                    
+                    <tr>
+                       <td> Passo Circuferencial </td>
+                       <td > ${pcp * escala_semfim.value} mm </td>
+                        <td > ${pcc * escala_semfim.value} mm </td>
+                    </tr>  
+
                     <tr>
                         <td> Passo Normal </td>
-                        <td > ${passoNormalCoroa}  mm </td>
+                        <td > ${pn * escala_semfim.value}  mm </td>
                     </tr>
+             
                     <tr>
                         <td> Passo Axial </td>
-                        <td > ${passoAxialPinhao} mm </td>
-                    </tr>
-                    <tr>
-                        <td> Passo Circuferencial </td>
-                        <td > ${passoCircuferencialCoroa} mm </td>
-                        <td > ${passoCircuferencialPinhao} mm </td>
-                    </tr>                
-                    <tr>
+                        <td > ${pap * escala_semfim.value} mm </td>
+                     </tr>
+                         
+                   <tr>
                         <td> Passo Helice </td>
-                        <td > ${passoHelicePinhao} mm </td>
+                        <td > ${php * escala_semfim.value} mm </td>
                     </tr>
-                    
+            
                     <tr>
-                        <td> Altura da Cabeça do dente </td>
-                        <td > ${alturaCabeca} mm </td>
+                        <td> Altura da Cabeça</td>
+                        <td > ${modulo_semfim.value * escala_semfim.value} mm </td>
                     </tr>
-                    
-                    <tr>
-                        <td> Comp. Rosca (L1) </td>
-                        <td > ${comprimentoRoscaParafuso} mm </td>
-                    </tr>
-                    
-                    <tr>
-                        <td> Altura da Cabeça </td>
-                        <td > ${alturaCabeca} mm </td>
-                    </tr>
-                    
+                            
                     <tr>
                         <td> Altura do Pè </td>
-                        <td > ${alturaPe} mm </td>
+                        <td > ${bp * escala_semfim.value} mm </td>
                     </tr>
                     
                     <tr>
                         <td> Altura Total </td>
-                        <td > ${alturaTotal} mm </td>
+                        <td > ${hp * escala_semfim.value} mm </td>
                     </tr>
                     
                     <tr>
                         <td> Folga do Pé </td>
-                        <td > ${folgaPe} mm </td>
+                        <td > ${ep * escala_semfim.value} mm </td>
                     </tr>
                     
                     <tr>
                         <td> Espessura do Dente </td>
-                        <td > ${espessuraPinhao} mm </td>
+                        <td > ${eep * escala_semfim.value} mm </td>
+                    </tr>
+
+                    <tr>
+                        <td> Comp. Rosca (L1) </td>
+                        <td > ${l1 * escala_semfim.value} mm </td>
                     </tr>
                 </tbody>
             </table>
@@ -538,67 +538,73 @@ reusltado_semfim.innerHTML = `
                 <tbody>
                     <tr>
                         <td>FORMULAS</td>
-                        <td>PARAFUSO</td>
+                        <td>COROA</td>
                     </tr>
                     
                     <tr>
                         <td> Diametro Externo Maximo </td>
-                        <td > ${diametroExternoMaximo} mm </td>
+                        <td > ${de2m * escala_semfim.value} mm </td>
                     </tr>
                     
                     <tr>
-                        <td> Diamtro Cubo </td>
-                        <td > ${diametroCuboCoroa} mm </td>
+                        <td> Diametro Base </td>
+                        <td > ${db * escala_semfim.value} mm </td>
                     </tr>
-                    
-                    <tr>
-                        <td> Comp. Cubo </td>
-                        <td > ${comprimentoCubo} mm </td>
-                    </tr>
-                    
+                          
+                                        
                     <tr>
                         <td> Largura Coroa (L2) </td>
-                        <td > ${larguraCoroa} mm </td>
+                        <td > ${l2 * escala_semfim.value} mm </td>
                     </tr>
                     
                     <tr>
                         <td> Espessura Corpo (L3) </td>
-                        <td > ${espessuraCorpoEngrenagem} mm </td>
+                        <td > ${l3 * escala_semfim.value} mm </td>
                     </tr>
                     
                     <tr>
-                        <td> Raio Externo Garganta </td>
-                        <td > ${raioExternoGarganta} mm </td>
+                        <td> Raio Externo Garganta (Reg) </td>
+                        <td > ${reg * escala_semfim.value} mm </td>
                     </tr>
                     
                     <tr>
-                        <td> Raio Interno Garganta </td>
-                        <td > ${raioInternoGarganta} mm </td>
+                        <td> Raio Interno Garganta (Rig) </td>
+                        <td > ${rig * escala_semfim.value} mm </td>
                     </tr>
                                         
                     <tr>
-                        <td> Comp. do Fundo </td>
-                        <td > ${comprimentoFundo} mm </td>
+                        <td> Comp. do Fundo (K) </td>
+                        <td > ${k * escala_semfim.value} mm </td>
                     </tr>
                     
                     <tr>
-                        <td> Reforço do Dente </td>
-                        <td > ${reforcoDente} mm </td>
+                        <td> Reforço do Dente (G) </td>
+                        <td > ${g * escala_semfim.value} mm </td>
                     </tr>
                     
                     <tr>
                         <td> Distancia entre Centros </td>
-                        <td > ${distanciaCentros}  mm </td>
+                        <td > ${dc * escala_semfim.value}  mm </td>
+                    </tr>
+                                       
+                    <tr>
+                        <td> Largura Chaveta (s) </td>
+                        <td > ${s * escala_semfim.value} mm </td>
                     </tr>
                     
                     <tr>
-                        <td> Largura Chaveta </td>
-                        <td > ${larguraChaveta} mm </td>
+                        <td> Profundiade Chaveta (t) </td>
+                        <td > ${t * escala_semfim.value} mm </td>
                     </tr>
-                    
+
                     <tr>
-                        <td> Profundiade Chaveta </td>
-                        <td > ${profundidadeChaveta} mm </td>
+                        <td> Diametro do Cubo </td>
+                        <td > ${dc * escala_semfim.value} mm </td>
+                     </tr>
+                
+                    <tr>
+                        <td> Comprimento do Cubo </td>
+                        <td > ${cc * escala_semfim.value} mm </td>
                     </tr>
                 </tbody>
             </table>
