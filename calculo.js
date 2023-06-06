@@ -404,7 +404,7 @@ const dic = (dpc - (2.334 * modulo_semfim.value)).toFixed(2)
 const bp = (1.167 * modulo_semfim.value).toFixed(2)
 // bp = bc
 
-const hp = (modulo_semfim.value + bp)
+const hp = (Number(modulo_semfim.value) + Number(bp)).toFixed(2)
 // hp = hc
 
 const ep = (0.167 * modulo_semfim.value).toFixed(2)
