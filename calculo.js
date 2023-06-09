@@ -586,7 +586,7 @@ reusltado_semfim.innerHTML = `
                     
                     <tr>
                         <td> Distancia entre Centros </td>
-                        <td > ${dc * escala_semfim.value}  mm </td>
+                        <td > ${i * escala_semfim.value}  mm </td>
                     </tr>
                                        
                     <tr>
