@@ -376,6 +376,9 @@ if((N1_semfim.value != "") && (D2_semfim.value != "") && (N2_semfim.value != "")
 
 // Ninguém nunca vai saber o trabalho do caralho que deu pra concertar/fazer essa merda   -FelipSenna
 
+// Pra voce querido colega programador que decidiu inspecionar essa bomba que eu chamo de codigo, so saiba que fazer todas essas 
+// formulas e fazer tudo isso funcionar me custou arduos 4 meses e eu espero que isso possa te ajudar no que estiver fazendo 
+
 const map = (modulo_semfim.value / Math.cos(AngBeta_semfim.value * (Math.PI / 180))).toFixed(2)
 const mcp = (modulo_semfim.value / Math.sin(AngBeta_semfim.value * (Math.PI / 180))).toFixed(2)
 
@@ -411,6 +414,7 @@ const ep = (0.167 * modulo_semfim.value).toFixed(2)
 // ep = ec
 
 const eep = (pn / 2).toFixed(2)
+// eep = g
 
 const l1 = (2 * map * (1 + Math.sqrt(N2_semfim.value))).toFixed(2)
 
@@ -423,8 +427,6 @@ const db = (dpc * Math.cos(AngTeta_semfim.value * (Math.PI / 180))).toFixed(2)
 const de2m = (parseFloat(dpc) + 3 * modulo_semfim.value).toFixed(2)
 
 const k = (6.5 * modulo_semfim.value).toFixed(2)
-
-const g = (pn / 2).toFixed(2)
 
 const i = ((Number(dpp) + Number(dpc)) / 2).toFixed(2)
 
@@ -579,7 +581,7 @@ reusltado_semfim.innerHTML = `
                     
                     <tr>
                         <td> Reforço do Dente (G) </td>
-                        <td > ${g * escala_semfim.value} mm </td>
+                        <td > ${eep * escala_semfim.value} mm </td>
                     </tr>
                     
                     <tr>
